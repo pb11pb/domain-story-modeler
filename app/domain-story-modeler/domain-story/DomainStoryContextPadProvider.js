@@ -11,7 +11,7 @@ import {
   bind
 } from 'min-dash';
 import Modeler from 'bpmn-js/lib/Modeler';
-import { setPrivateParameters } from './util/DSUtil';
+import { setPrivateParameters } from './popup-menu/util/CustomIconUtil';
 
 
 export default function DomainStoryContextPadProvider(injector, connect, translate, elementFactory, create, canvas, contextPad, popupMenu, replaceMenuProvider, commandStack, eventBus, modeling) {
@@ -73,7 +73,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
           action: {
             click: function(event, element) {
               var persitentType ='';
-              if (element.businessObject.type.includesworkObject) {
+              if (element.businessObject.type.includes('workObject')) {
                 persitentType ='domainStory:workObjectPrivate';
               } else {
                 persitentType = 'domainStory:actorPrivate';

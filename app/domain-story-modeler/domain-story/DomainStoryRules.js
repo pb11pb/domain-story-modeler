@@ -49,26 +49,33 @@ function canConnect(source, target) {
 
   // only judge about two custom elements
   if (isDomainStoryGroup(target) || !isDomainStory(source) || !isDomainStory(target)) {
+
+    console.log('a1');
     return;
   }
 
   // do not allow a connection from one element to itself
   if (source == target) {
+    console.log('a2');
     return;
   }
 
   // do not allow a connection between two actors
   if (isActor(source) && isActor(target)) {
+    console.log('a3');
     return;
   }
 
   // do not allow a connection, where the source or target is an activity
   if (isActivity(source) || isActivity(target)) {
+    console.log('a4');
     return;
   }
 
   // do not allow a connection, where the source or target is an annotation connection
   if (isConnection(source) || isConnection(target)) {
+
+    console.log('a5');
     return;
   }
 

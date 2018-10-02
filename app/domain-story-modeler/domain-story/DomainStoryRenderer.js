@@ -25,8 +25,7 @@ import {
 import {
   getRectPath,
   calculateTextWidth,
-  calculateDeg,
-  getNewSVG
+  calculateDeg
 } from './util/DSUtil';
 
 import sanitize from './util/Sanitizer';
@@ -44,6 +43,7 @@ import {
   isObject,
   assign
 } from 'min-dash';
+import { getNewSVG } from './popup-menu/util/CustomIconUtil';
 
 var RENDERER_IDS = new Ids();
 var numbers = [];

@@ -43,9 +43,9 @@ import {
   correctGroupChildren,
   cleanDictionaries,
   getWorkObjectDictionary,
-  getActivityDictionary,
-  setNewSVGAndReplace
+  getActivityDictionary
 } from './domain-story-modeler/domain-story/util/DSUtil';
+import { setNewSVGAndReplace } from './domain-story-modeler/domain-story/popup-menu/util/CustomIconUtil';
 
 var modeler = new DomainStoryModeler({
   container: '#canvas',
@@ -419,7 +419,6 @@ versionDialogButtonCanvel.addEventListener('click', function() {
 // -----
 
 document.getElementById('importSVG').onchange = function() {
-  // TODO
   var input = document.getElementById('importSVG').files[0];
   var reader = new FileReader();
   reader.onloadend = function(e) {

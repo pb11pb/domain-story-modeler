@@ -2,14 +2,9 @@
 
 import { is } from 'bpmn-js/lib/util/ModelUtil';
 import { assign } from 'min-dash';
-import Replace from '../popup-menu/Replace';
 
 var activityDictionary = [];
 var workObjectDictionary =[];
-var svgUpload;
-var modeling;
-var type;
-var persistentElement;
 
 // creates a SVG path that describes a rectangle which encloses the given shape.
 export function getRectPath(shape) {
@@ -154,24 +149,6 @@ export function ifDomainStoryElement(fn) {
       fn(event);
     }
   };
-}
-
-export function setPrivateParameters(element,typeIn, modelingIn) {
-  persistentElement = element;
-  type = typeIn;
-  modeling=modelingIn;
-}
-
-export function setNewSVGAndReplace(svgImport) {
-  svgUpload = svgImport;
-
-  var replace = new Replace(modeling);
-  var replaceElement = replace.replaceElement;
-  replaceElement(persistentElement, type, modeling);
-}
-
-export function getNewSVG() {
-  return svgUpload;
 }
 
 export function isDomainStoryElement(element) {

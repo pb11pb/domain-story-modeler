@@ -1,6 +1,7 @@
 'use strict';
 
 import Replace from '../Replace';
+import { assign } from 'min-dash';
 
 var svgUpload;
 var modeling;
@@ -18,7 +19,10 @@ export function setNewSVGAndReplace(svgImport) {
 
   var replace = new Replace(modeling);
   var replaceElement = replace.replaceElement;
-  replaceElement(persistentElement, type, modeling);
+  var newElement = replaceElement(persistentElement, type, modeling);
+  assign(newElement, {
+    svg: svgUpload
+  });
 }
 
 export function getNewSVG() {

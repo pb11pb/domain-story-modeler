@@ -11,6 +11,7 @@ import {
   bind
 } from 'min-dash';
 import Modeler from 'bpmn-js/lib/Modeler';
+import { setPrivateParameters } from './util/DSUtil';
 
 
 export default function DomainStoryContextPadProvider(injector, connect, translate, elementFactory, create, canvas, contextPad, popupMenu, replaceMenuProvider, commandStack, eventBus, modeling) {
@@ -42,6 +43,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:workObjectEmail':
     case 'domainStory:workObjectBubble':
     case 'domainStory:workObjectInfo':
+    case 'domainStory:workObjectPrivate':
 
       assign(actions, {
         'append.actorPerson': appendAction('domainStory:actorPerson', 'icon-domain-story-actor-person', 'person', 'actors'),
@@ -52,6 +54,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:actorPerson':
     case 'domainStory:actorGroup':
     case 'domainStory:actorSystem':
+    case 'domainStory:actorPrivate':
 
       assign(actions, {
         'append.workObject': appendAction('domainStory:workObject', 'icon-domain-story-workObject', 'workobject', 'workObjects'),
@@ -60,6 +63,26 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
         'append.workObjectEmail': appendAction('domainStory:workObjectEmail', 'icon-domain-story-workObject-email', 'email', 'workObjects'),
         'append.workObjectBubble': appendAction('domainStory:workObjectBubble', 'icon-domain-story-workObject-bubble', 'conversation', 'workObjects'),
         'append.workObjectInfo': appendAction('domainStory:workObjectInfo', 'icon-domain-story-workObject-info', 'information', 'workObjects')
+      });
+
+      assign(actions, {
+        'changeIcon': {
+          group: 'edit',
+          className: 'icon-domain-story-changeIcon',
+          title: translate('Change icon'),
+          action: {
+            click: function(event, element) {
+              var persitentType ='';
+              if (element.businessObject.type.includesworkObject) {
+                persitentType ='domainStory:workObjectPrivate';
+              } else {
+                persitentType = 'domainStory:actorPrivate';
+              }
+              setPrivateParameters(element, { type: persitentType }, modeling);
+              document.getElementById('importSVG').click();
+            }
+          }
+        }
       });
 
       // replace menu entry

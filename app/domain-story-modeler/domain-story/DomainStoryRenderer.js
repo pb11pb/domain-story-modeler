@@ -25,7 +25,8 @@ import {
 import {
   getRectPath,
   calculateTextWidth,
-  calculateDeg
+  calculateDeg,
+  getNewSVG
 } from './util/DSUtil';
 
 import sanitize from './util/Sanitizer';
@@ -304,6 +305,9 @@ export default function DomainStoryRenderer(eventBus, styles, canvas, textRender
     case 'domainStory:actorSystem':
       actor = svgCreate('<svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,18c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z"/></svg>');
       break;
+    case 'domainStory:actorPrivate':
+      actor = svgCreate(getNewSVG());
+      break;
     }
     svgAttr(actor, svgDynamicSizeAttributes);
     svgAppend(p, actor);
@@ -340,6 +344,9 @@ export default function DomainStoryRenderer(eventBus, styles, canvas, textRender
       break;
     case 'domainStory:workObjectInfo':
       workObject = svgCreate('<svg fill="#000000" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>');
+      break;
+    case 'domainStory:workObjectPrivate':
+      workObject = svgCreate(getNewSVG());
       break;
     }
 
@@ -594,6 +601,7 @@ DomainStoryRenderer.prototype.drawShape = function(p, element) {
   case 'domainStory:actorPerson':
   case 'domainStory:actorGroup':
   case 'domainStory:actorSystem':
+  case 'domainStory:actorPrivate':
     return this.drawActor(p, element);
   case 'domainStory:workObject':
   case 'domainStory:workObjectFolder':
@@ -601,6 +609,7 @@ DomainStoryRenderer.prototype.drawShape = function(p, element) {
   case 'domainStory:workObjectEmail':
   case 'domainStory:workObjectBubble':
   case 'domainStory:workObjectInfo':
+  case 'domainStory:workObjectPrivate':
     return this.drawWorkObject(p, element);
   case 'domainStory:textAnnotation':
     return this.drawAnnotation(p, element);
@@ -616,6 +625,7 @@ DomainStoryRenderer.prototype.getShapePath = function(shape) {
   case 'domainStory:actorPerson':
   case 'domainStory:actorGroup':
   case 'domainStory:actorSystem':
+  case 'domainStory:actorPrivate':
     return this.getActorPath(shape);
   case 'domainStory:workObject':
   case 'domainStory:workObjectFolder':
@@ -623,6 +633,7 @@ DomainStoryRenderer.prototype.getShapePath = function(shape) {
   case 'domainStory:workObjectEmail':
   case 'domainStory:workObjectBubble':
   case 'domainStory:workObjectInfo':
+  case 'domainStory:workObjectPrivate':
     return this.getWorkObjectPath(shape);
   case 'domainStory:group':
     return this.getGroupPath(shape);

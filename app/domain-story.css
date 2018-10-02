@@ -354,6 +354,13 @@ cursor: default;
   content: "spellcheck";
   background-repeat: no-repeat;
 }
+
+.icon-domain-story-changeIcon::before{
+  font-family: "Material Icons";
+  content: "perm_media";
+  background-repeat: no-repeat;
+}
+
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;

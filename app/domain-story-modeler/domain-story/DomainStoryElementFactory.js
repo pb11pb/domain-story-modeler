@@ -120,6 +120,8 @@ DomainStoryElementFactory.prototype._getCustomElementSize = function(type) {
     'domainStory:workObjectEmail': { width: 75, height: 75 },
     'domainStory:workObjectBubble': { width: 75, height: 75 },
     'domainStory:workObjectInfo': { width: 75, height: 75 },
+    'domainStory:workObjectPrivate' : { width: 75, height: 75 },
+    'domainStory:actorPrivate' : { width: 75, height: 75 },
     'domainStory:textAnnotation': { width: 100, height: 30 },
     'domainStory:group': { width: 525, height: 275 }
   };

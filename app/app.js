@@ -43,7 +43,8 @@ import {
   correctGroupChildren,
   cleanDictionaries,
   getWorkObjectDictionary,
-  getActivityDictionary
+  getActivityDictionary,
+  setNewSVGAndReplace
 } from './domain-story-modeler/domain-story/util/DSUtil';
 
 var modeler = new DomainStoryModeler({
@@ -416,6 +417,17 @@ versionDialogButtonCanvel.addEventListener('click', function() {
 });
 
 // -----
+
+document.getElementById('importSVG').onchange = function() {
+  // TODO
+  var input = document.getElementById('importSVG').files[0];
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+    setNewSVGAndReplace(e.target.result);
+  };
+
+  reader.readAsText(input);
+};
 
 document.getElementById('import').onchange = function() {
 

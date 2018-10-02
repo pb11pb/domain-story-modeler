@@ -31,6 +31,7 @@ ReplaceMenuProvider.prototype.getEntries = function(element) {
   case 'domainStory:actorPerson': entries = replaceOptions.ACTOR_PERSON; break;
   case 'domainStory:actorGroup': entries = replaceOptions.ACTOR_GROUP; break;
   case 'domainStory:actorSystem': entries = replaceOptions.ACTOR_SYSTEM; break;
+  case 'domainStory:actorPrivate' : entries = replaceOptions.ACTOR_PRIVATE; break;
 
   case 'domainStory:workObject': entries = replaceOptions.WORKOBJECT; break;
   case 'domainStory:workObjectFolder': entries = replaceOptions.WORKOBJECT_FOLDER; break;
@@ -38,6 +39,7 @@ ReplaceMenuProvider.prototype.getEntries = function(element) {
   case 'domainStory:workObjectEmail': entries = replaceOptions.WORKOBJECT_EMAIL; break;
   case 'domainStory:workObjectBubble': entries = replaceOptions.WORKOBJECT_BUBBLE; break;
   case 'domainStory:workObjectInfo': entries = replaceOptions.WORKOBJECT_INFO; break;
+  case 'domainStory:workObjectPrivate' : entries = replaceOptions.WORKOBJECT_PRIVATE; break;
   }
 
   return this._createEntries(element, entries);

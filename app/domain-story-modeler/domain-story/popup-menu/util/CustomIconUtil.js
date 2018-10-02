@@ -7,7 +7,7 @@ var modeling;
 var type;
 var persistentElement;
 
-export function setPrivateParameters(element,typeIn, modelingIn) {
+export function setCustomIconParameters(element,typeIn, modelingIn) {
   persistentElement = element;
   type = typeIn;
   modeling=modelingIn;
@@ -18,8 +18,7 @@ export function setNewSVGAndReplace(svgImport) {
 
   var replace = new Replace(modeling);
   var replaceElement = replace.replaceElement;
-  var ret = replaceElement(persistentElement, type, modeling);
-  console.log(ret);
+  replaceElement(persistentElement, type, modeling);
 }
 
 export function getNewSVG() {

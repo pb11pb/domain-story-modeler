@@ -6,7 +6,7 @@ function getLabelAttr(semantic) {
   if (is(semantic, 'domainStory:actorPerson') ||
     is(semantic, 'domainStory:actorGroup') ||
     is(semantic, 'domainStory:actorSystem') ||
-    is(semantic, 'domainStory:actorPrivate') ||
+    is(semantic, 'domainStory:actorCustomIcon') ||
     is(semantic, 'domainStory:workObject') ||
     is(semantic, 'domainStory:workObjectFolder') ||
     is(semantic, 'domainStory:workObjectCall') ||
@@ -15,7 +15,7 @@ function getLabelAttr(semantic) {
     is(semantic, 'domainStory:activity') ||
     is(semantic, 'domainStory:group') ||
     is(semantic, 'domainStory:workObjectInfo')||
-    is(semantic, 'domainStory:workObjectPrivate')) {
+    is(semantic, 'domainStory:workObjectCustomIcon')) {
 
     return 'name';
   }

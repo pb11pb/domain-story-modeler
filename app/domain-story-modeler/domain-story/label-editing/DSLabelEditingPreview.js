@@ -73,7 +73,7 @@ export default function DSLabelEditingPreview(
     } else if (is(element, 'domainStory:actorPerson') ||
       is(element, 'domainStory:actorGroup') ||
       is(element, 'domainStory:actorSystem') ||
-      is(element, 'domainStory:actorPrivate') ||
+      is(element, 'domainStory:actorCustomIcon') ||
       is(element, 'domainStory:workObject') ||
       is(element, 'domainStory:workObjectFolder') ||
       is(element, 'domainStory:workObjectCall') ||
@@ -82,7 +82,7 @@ export default function DSLabelEditingPreview(
       is(element, 'domainStory:activity') ||
       is(element, 'domainStory:group') ||
       is(element, 'domainStory:workObjectInfo')||
-      is(element, 'domainStory:workObjectPrivate')) {
+      is(element, 'domainStory:workObjectCustomIcon')) {
       canvas.addMarker(element, MARKER_LABEL_HIDDEN);
     }
   });

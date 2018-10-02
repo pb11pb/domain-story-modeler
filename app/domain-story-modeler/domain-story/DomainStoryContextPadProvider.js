@@ -11,7 +11,7 @@ import {
   bind
 } from 'min-dash';
 import Modeler from 'bpmn-js/lib/Modeler';
-import { setPrivateParameters } from './popup-menu/util/CustomIconUtil';
+import { setCustomIconParameters } from './popup-menu/util/CustomIconUtil';
 
 
 export default function DomainStoryContextPadProvider(injector, connect, translate, elementFactory, create, canvas, contextPad, popupMenu, replaceMenuProvider, commandStack, eventBus, modeling) {
@@ -43,7 +43,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:workObjectEmail':
     case 'domainStory:workObjectBubble':
     case 'domainStory:workObjectInfo':
-    case 'domainStory:workObjectPrivate':
+    case 'domainStory:workObjectCustomIcon':
 
       assign(actions, {
         'append.actorPerson': appendAction('domainStory:actorPerson', 'icon-domain-story-actor-person', 'person', 'actors'),
@@ -54,7 +54,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:actorPerson':
     case 'domainStory:actorGroup':
     case 'domainStory:actorSystem':
-    case 'domainStory:actorPrivate':
+    case 'domainStory:actorCustomIcon':
 
       assign(actions, {
         'append.workObject': appendAction('domainStory:workObject', 'icon-domain-story-workObject', 'workobject', 'workObjects'),
@@ -74,11 +74,11 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
             click: function(event, element) {
               var persitentType ='';
               if (element.businessObject.type.includes('workObject')) {
-                persitentType ='domainStory:workObjectPrivate';
+                persitentType ='domainStory:workObjectCustomIcon';
               } else {
-                persitentType = 'domainStory:actorPrivate';
+                persitentType = 'domainStory:actorCustomIcon';
               }
-              setPrivateParameters(element, { type: persitentType }, modeling);
+              setCustomIconParameters(element, { type: persitentType }, modeling);
               document.getElementById('importSVG').click();
             }
           }

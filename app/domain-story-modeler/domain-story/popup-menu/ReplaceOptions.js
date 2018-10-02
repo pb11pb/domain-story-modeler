@@ -57,7 +57,7 @@ export var ACTOR_SYSTEM = [
   }
 ];
 
-export var ACTOR_PRIVATE = [
+export var ACTOR_CustomIcon = [
   {
     label: 'Change to person',
     actionName: 'replace-with-actor-person',
@@ -342,7 +342,7 @@ export var WORKOBJECT_INFO = [
   }
 ];
 
-export var WORKOBJECT_PRIVATE = [
+export var WORKOBJECT_CustomIcon = [
   {
     label: 'Change to document',
     actionName: 'replace-with-work-object',

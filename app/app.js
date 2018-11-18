@@ -45,7 +45,10 @@ import {
   getWorkObjectDictionary,
   getActivityDictionary
 } from './domain-story-modeler/domain-story/util/DSUtil';
-import { setNewSVGAndReplace } from './domain-story-modeler/domain-story/popup-menu/util/CustomIconUtil';
+import {
+  setNewSVGAndReplace,
+  setNewImgAndReplace
+} from './domain-story-modeler/domain-story/popup-menu/util/CustomIconUtil';
 
 var modeler = new DomainStoryModeler({
   container: '#canvas',
@@ -417,6 +420,17 @@ versionDialogButtonCanvel.addEventListener('click', function() {
 });
 
 // -----
+
+document.getElementById('importImg').onchange = function() {
+  var input = document.getElementById('importImg').files[0];
+  var reader = new FileReader();
+  reader.onloadend = function(e) {
+    var img= e.target.result;
+
+    setNewImgAndReplace(img);
+  };
+  reader.readAsDataURL(input);
+};
 
 document.getElementById('importSVG').onchange = function() {
   var input = document.getElementById('importSVG').files[0];

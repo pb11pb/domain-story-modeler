@@ -121,7 +121,9 @@ DomainStoryElementFactory.prototype._getCustomElementSize = function(type) {
     'domainStory:workObjectBubble': { width: 75, height: 75 },
     'domainStory:workObjectInfo': { width: 75, height: 75 },
     'domainStory:workObjectCustomIcon' : { width: 75, height: 75 },
+    'domainStory:workObjectCustomIconImg' : { width: 75, height: 75 },
     'domainStory:actorCustomIcon' : { width: 75, height: 75 },
+    'domainStory:actorCustomIconImg' : { width: 75, height: 75 },
     'domainStory:textAnnotation': { width: 100, height: 30 },
     'domainStory:group': { width: 525, height: 275 }
   };

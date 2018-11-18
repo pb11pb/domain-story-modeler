@@ -156,6 +156,7 @@ export function isDomainStoryElement(element) {
     is(element, 'domainStory:actorGroup') ||
     is(element, 'domainStory:actorSystem') ||
     is(element, 'domainStory:actorCustomIcon') ||
+    is(element, 'domainStory:actorCustomIconImg') ||
     is(element, 'domainStory:workObject') ||
     is(element, 'domainStory:workObjectFolder') ||
     is(element, 'domainStory:workObjectCall') ||
@@ -165,7 +166,8 @@ export function isDomainStoryElement(element) {
     is(element, 'domainStory:connection') ||
     is(element, 'domainStory:group') ||
     is(element, 'domainStory:workObjectInfo')||
-    is(element, 'domainStory:workObjectCustomIcon');
+    is(element, 'domainStory:workObjectCustomIcon')||
+    is(element, 'domainStory:workObjectCustomIconImg');
 }
 
 // dictionary Getter & Setter

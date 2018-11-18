@@ -74,6 +74,7 @@ export default function DSLabelEditingPreview(
       is(element, 'domainStory:actorGroup') ||
       is(element, 'domainStory:actorSystem') ||
       is(element, 'domainStory:actorCustomIcon') ||
+      is(element, 'domainStory:actorCustomIconImg') ||
       is(element, 'domainStory:workObject') ||
       is(element, 'domainStory:workObjectFolder') ||
       is(element, 'domainStory:workObjectCall') ||
@@ -82,7 +83,8 @@ export default function DSLabelEditingPreview(
       is(element, 'domainStory:activity') ||
       is(element, 'domainStory:group') ||
       is(element, 'domainStory:workObjectInfo')||
-      is(element, 'domainStory:workObjectCustomIcon')) {
+      is(element, 'domainStory:workObjectCustomIcon')||
+      is(element, 'domainStory:workObjectCustomIconImg')) {
       canvas.addMarker(element, MARKER_LABEL_HIDDEN);
     }
   });

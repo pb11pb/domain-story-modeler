@@ -44,6 +44,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:workObjectBubble':
     case 'domainStory:workObjectInfo':
     case 'domainStory:workObjectCustomIcon':
+    case 'domainStory:workObjectCustomIconImg':
 
       assign(actions, {
         'append.actorPerson': appendAction('domainStory:actorPerson', 'icon-domain-story-actor-person', 'person', 'actors'),
@@ -55,6 +56,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
     case 'domainStory:actorGroup':
     case 'domainStory:actorSystem':
     case 'domainStory:actorCustomIcon':
+    case 'domainStory:actorCustomIconImg':
 
       assign(actions, {
         'append.workObject': appendAction('domainStory:workObject', 'icon-domain-story-workObject', 'workobject', 'workObjects'),
@@ -69,17 +71,37 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
         'changeIcon': {
           group: 'edit',
           className: 'icon-domain-story-changeIcon',
-          title: translate('Change icon'),
+          title: translate('Change icon (SVG)'),
           action: {
             click: function(event, element) {
-              var persitentType ='';
+              var persistentType ='';
               if (element.businessObject.type.includes('workObject')) {
-                persitentType ='domainStory:workObjectCustomIcon';
+                persistentType ='domainStory:workObjectCustomIcon';
               } else {
-                persitentType = 'domainStory:actorCustomIcon';
+                persistentType = 'domainStory:actorCustomIcon';
               }
-              setCustomIconParameters(element, { type: persitentType }, modeling);
+              setCustomIconParameters(element, { type: persistentType }, modeling);
               document.getElementById('importSVG').click();
+            }
+          }
+        }
+      });
+
+      assign(actions, {
+        'changeIconImg': {
+          group: 'edit',
+          className: 'icon-domain-story-changeIcon',
+          title: translate('Cange Icon (Image)'),
+          action: {
+            click: function(event, element) {
+              var persistentType ='';
+              if (element.businessObject.type.includes('workObject')) {
+                persistentType ='domainStory:workObjectCustomIconImg';
+              } else {
+                persistentType = 'domainStory:actorCustomIconImg';
+              }
+              setCustomIconParameters(element, { type: persistentType }, modeling);
+              document.getElementById('importImg').click();
             }
           }
         }

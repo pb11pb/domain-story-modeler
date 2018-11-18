@@ -32,6 +32,8 @@ ReplaceMenuProvider.prototype.getEntries = function(element) {
   case 'domainStory:actorGroup': entries = replaceOptions.ACTOR_GROUP; break;
   case 'domainStory:actorSystem': entries = replaceOptions.ACTOR_SYSTEM; break;
   case 'domainStory:actorCustomIcon' : entries = replaceOptions.ACTOR_CustomIcon; break;
+  case 'domainStory:actorCustomIconImg' : entries = replaceOptions.ACTOR_CustomIconImg; break;
+
 
   case 'domainStory:workObject': entries = replaceOptions.WORKOBJECT; break;
   case 'domainStory:workObjectFolder': entries = replaceOptions.WORKOBJECT_FOLDER; break;
@@ -40,6 +42,7 @@ ReplaceMenuProvider.prototype.getEntries = function(element) {
   case 'domainStory:workObjectBubble': entries = replaceOptions.WORKOBJECT_BUBBLE; break;
   case 'domainStory:workObjectInfo': entries = replaceOptions.WORKOBJECT_INFO; break;
   case 'domainStory:workObjectCustomIcon' : entries = replaceOptions.WORKOBJECT_CustomIcon; break;
+  case 'domainStory:workObjectCustomIconImg' : entries = replaceOptions.WORKOBJECT_CustomIconImg; break;
   }
 
   return this._createEntries(element, entries);

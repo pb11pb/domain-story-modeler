@@ -90,7 +90,7 @@ export default function DomainStoryContextPadProvider(injector, connect, transla
       assign(actions, {
         'changeIconImg': {
           group: 'edit',
-          className: 'icon-domain-story-changeIcon',
+          className: 'icon-domain-story-changeIcon-Img',
           title: translate('Cange Icon (Image)'),
           action: {
             click: function(event, element) {

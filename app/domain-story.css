@@ -357,6 +357,12 @@ cursor: default;
 
 .icon-domain-story-changeIcon::before{
   font-family: "Material Icons";
+  content: "filter";
+  background-repeat: no-repeat;
+}
+
+.icon-domain-story-changeIcon-Img::before{
+  font-family: "Material Icons";
   content: "perm_media";
   background-repeat: no-repeat;
 }
